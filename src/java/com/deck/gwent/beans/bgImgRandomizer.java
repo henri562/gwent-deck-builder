@@ -17,8 +17,9 @@ import javax.faces.bean.RequestScoped;
 @RequestScoped
 public class bgImgRandomizer {
 
-    private String imgPath = "cover/";
-    private final int UPPERBOUND = 3, LOWERBOUND = 1;
+    private final String FOLDER = "cover/";
+    private String imgPath = FOLDER;
+    private final int UPPERBOUND = 2, LOWERBOUND = 1;
     /**
      * Creates a new instance of bgImgRandomizer
      */
@@ -35,12 +36,9 @@ public class bgImgRandomizer {
         int dice = random.nextInt(UPPERBOUND) + LOWERBOUND;
         switch (dice) {
             case 1:
-                imgPath += "gwent-deck.jpg";
-                break;
-            case 2:
                 imgPath += "witcher-3-main-characters.jpg";
                 break;
-            case 3:
+            case 2:
                 imgPath += "geralt-ciri-triss-yen-portraits.jpg";
                 break;
         }

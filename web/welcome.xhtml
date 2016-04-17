@@ -3,12 +3,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
-        <title>Welcome Page</title>
+        <title>Welcome</title>
         <h:outputStylesheet library="css" name="style.css" />
     </h:head>
     <h:body>
         <h1>Welcome to Gwent Deck Builder</h1>
-        <h:graphicImage library="img" name="#{bgImgRandomizer.imgPath}" />
+        <h:graphicImage library="img"
+                        name="#{bgImgRandomizer.imgPath}"
+                        styleClass="cover-img" />
+        <div class="wrapper">
+            <h:form>
+            <h:commandButton value="Build Deck"
+                             action="cardSearch?faces-redirect=false"/>
+            </h:form>
+        </div>
     </h:body>
 </html>
-

@@ -11,7 +11,54 @@ body {
     background-color: #232B2B; /* charcoal */
 }
 
+input {
+    text-align: left;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.submit {
+    position: relative;
+}
+
 h1 {
     font-family: Century Gothic;
     color: #DC3D24; /* reddish orange */
+    text-align: center;
+}
+
+h3 {
+    font-family: Century Gothic;
+    color: #DC3D24;
+}
+
+h4 {
+    font-family: Century Gothic;
+    color: #DAA520; /* dark gold */
+}
+
+.cover-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* table style */
+.gwentCard-table {
+    border-collapse: separate;
+}
+
+.gwentCard-table-header {
+    font-family: Helvetica;
+    color: #FFFFFF; /* white */
+    background: #DC3D24;
+    padding: 16px;
+}
+
+.gwentCard-table-odd-row {
+    font-family: Impact;
+    text-align: center;
+    background: #E3AE57;
 }
