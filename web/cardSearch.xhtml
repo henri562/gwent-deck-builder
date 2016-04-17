@@ -10,7 +10,10 @@
     <h:body>
         <h3>Type name of card:</h3>
         <h:form>
-            <h:inputText id="search" value="#{processSearch.searchKey}" />
+            <h:message for="search" infoClass="info" errorClass="error" />
+            <h:inputText id="search" value="#{processSearch.searchKey}"
+                         required="true"
+                         requiredMessage="Please enter card name"/>
             <h:commandButton value="Search" action="#{processSearch.runQuery()}">
                 <f:ajax execute="search" render="@form" />
             </h:commandButton>

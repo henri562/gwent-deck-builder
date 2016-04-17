@@ -37,7 +37,7 @@ public class processSearch {
     }
 
     public void setSearchKey(String searchKey) {
-        this.searchKey = searchKey;
+            this.searchKey = searchKey;
     }
 
     public String getSearchKey() {

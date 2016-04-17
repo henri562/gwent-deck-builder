@@ -15,6 +15,18 @@ input {
     text-align: left;
 }
 
+.info {
+    font-family: Garamond;
+    color: #008000; /* green */
+    padding-right: 10px;
+}
+
+.error {
+    font-family: Garamond;
+    color: #FF0000; /* red */
+    padding-right: 10px;
+}
+
 .wrapper {
     text-align: center;
 }
@@ -35,7 +47,7 @@ h3 {
 }
 
 h4 {
-    font-family: Century Gothic;
+    font-family: Brush Script MT;
     color: #DAA520; /* dark gold */
 }
 
