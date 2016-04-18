@@ -32,6 +32,13 @@ INSERT INTO basic_gwent VALUES
         );
 
 INSERT INTO basic_gwent VALUES
+        ( 'Emhyr var Emreis, The White Flame'
+        , '-'
+        , 'Cancel opponent’s leader ability'
+        , 'Leader'
+        );
+
+INSERT INTO basic_gwent VALUES
         ( 'Tibor Eggebracht'
         , '10'
         , '-'
