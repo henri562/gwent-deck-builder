@@ -8,6 +8,7 @@
         <h:outputStylesheet library="css" name="style.css" />
     </h:head>
     <h:body>
+        <!-- search button -->
         <h3>Type name of card:</h3>
         <h:form>
             <h:message for="search" infoClass="info" errorClass="error" />
@@ -22,6 +23,7 @@
                           value="#{processSearch.searchKey != null ? processSearch.output : ''}" />
             </h4>
 
+            <!-- card details table -->
             <h:dataTable id="cardDetailsTable" value="#{processSearch.gwentCardList}" var="gc"
                          styleClass="gwentCard-table"
                          headerClass="gwentCard-table-header"
@@ -45,6 +47,8 @@
                     #{gc.type}
                 </h:column>
             </h:dataTable><br/>
+
+            <!-- card image -->
             <h:graphicImage library="img" name="#{processSearch.cardImgPath}" />
         </h:form>
     </h:body>

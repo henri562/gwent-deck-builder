@@ -5,6 +5,9 @@
  */
 package com.deck.gwent.beans;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
@@ -26,9 +29,8 @@ public class processSearch {
     private String cardAbility = "-";
     private String cardType = "-";
 
-    private gwentCard[] gwentCardList = new gwentCard[] {
-        new gwentCard(cardName, cardUnitStrength, cardAbility, cardType)
-    };
+    private final List<GwentCard> gwentCardList = new ArrayList<>(Arrays.asList(
+             new GwentCard(cardName, cardUnitStrength, cardAbility, cardType)));
 
     /**
      * Creates a new instance of processSearch
@@ -54,7 +56,7 @@ public class processSearch {
         return cardImgPath;
     }
 
-    public gwentCard[] getGwentCardList() {
+    public List<GwentCard> getGwentCardList() {
         return gwentCardList;
     }
 
@@ -73,22 +75,22 @@ public class processSearch {
         cardUnitStrength = "7";
         cardAbility = "Medic";
         cardType = "Hero";
-        gwentCardList = new gwentCard[] {
-            new gwentCard(cardName, cardUnitStrength, cardAbility, cardType)
-        };
+        gwentCardList.clear();
+        gwentCardList.add(new GwentCard(cardName, cardUnitStrength, cardAbility,
+                                        cardType));
     }
 
     private boolean fetchData() {
         return true;
     }
 
-    public static class gwentCard {
+    public static class GwentCard {
         private final String name;
         private final String unitStrength;
         private final String ability;
         private final String type;
 
-        public gwentCard(String name, String unitStrength, String ability,
+        public GwentCard(String name, String unitStrength, String ability,
                          String type) {
             this.name = name;
             this.unitStrength = unitStrength;
