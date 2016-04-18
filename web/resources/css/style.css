@@ -47,7 +47,7 @@ h3 {
 }
 
 h4 {
-    font-family: Brush Script MT;
+    font-family: Candara;
     color: #DAA520; /* dark gold */
 }
 
@@ -70,6 +70,12 @@ h4 {
 }
 
 .gwentCard-table-odd-row {
+    font-family: Impact;
+    text-align: center;
+    background: #E3AE57; /* yellowish brown */
+}
+
+.gwentCard-table-even-row {
     font-family: Impact;
     text-align: center;
     background: #E3AE57;
