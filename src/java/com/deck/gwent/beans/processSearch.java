@@ -39,9 +39,12 @@ public class processSearch implements Serializable {
     private final List<GwentCard> gwentCardList = new ArrayList<>(Arrays.asList(
              new GwentCard(cardName, cardUnitStrength, cardAbility, cardType)));
 
-    private Connection conn;
-    private PreparedStatement pstmt;
-    private ResultSet rset;
+    /* These Java SQL objects are by default non-serializable and therefore made
+    transient to prevent Apache Tomcat from de-serializing them when restoring
+    HTTP sessions */
+    private transient Connection conn;
+    private transient PreparedStatement pstmt;
+    private transient ResultSet rset;
     private static int count = 0;
 
     /**
@@ -71,6 +74,9 @@ public class processSearch implements Serializable {
         return gwentCardList;
     }
 
+    /**
+     * Processes user search and update image path
+     */
     public void runQuery() {
         if (fetchData()) {
             result = searchKey.substring(0, 1).toUpperCase()
@@ -89,13 +95,17 @@ public class processSearch implements Serializable {
         System.out.println("query #" + ++count + " run");
     }
 
+    /**
+     * Helper method for runQuery() to retrieve data from dB
+     * @return
+     */
     private boolean fetchData() {
         try {
             pstmt.setString(1, searchKey);
             rset = pstmt.executeQuery();
 
+            //if cursor is before the first row in result set
             if (rset.isBeforeFirst()) {
-                //if cursor is before the first row in result set
                 while (rset.next()) {
                     cardName = rset.getString("cardName");
                     cardUnitStrength = rset.getString("unitStrength");
@@ -113,6 +123,10 @@ public class processSearch implements Serializable {
         return false;
     }
 
+    /**
+     * Establishes connection to Oracle database and create an instance of a
+     * SQL preparedStatement
+     */
     private void initDB() {
         try {
             conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE",
@@ -126,7 +140,10 @@ public class processSearch implements Serializable {
         }
     }
 
-    public static class GwentCard {
+    /**
+     * Auxiliary inner class to hold individual card data
+     */
+    public static class GwentCard implements Serializable {
         private final String name;
         private final String unitStrength;
         private final String ability;

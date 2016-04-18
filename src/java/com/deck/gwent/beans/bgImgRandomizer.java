@@ -31,6 +31,9 @@ public class bgImgRandomizer {
         return imgPath;
     }
 
+    /**
+     * Randomizes the image displayed on the welcome page
+     */
     private void randomizeImg() {
         Random random = new Random();
         int dice = random.nextInt(UPPERBOUND) + LOWERBOUND;
