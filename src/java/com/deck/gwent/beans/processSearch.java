@@ -129,9 +129,9 @@ public class processSearch implements Serializable {
      */
     private void initDB() {
         try {
-            conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE",
-                                               "linm", "rommel");
-            System.out.println("Database connection established.");
+            conn = DriverManager.getConnection("jdbc:oracle:thin:@npu8.npu.edu:1521:npu8ora",
+                                               "CS457_12861", "changeme");
+            System.out.println("Connected to database. Schema: " + conn.getSchema());
             //make preparedStatement
             pstmt = conn.prepareStatement("SELECT * from basic_gwent"
                                           + " WHERE cardName = ?");

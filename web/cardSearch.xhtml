@@ -8,6 +8,8 @@
         <h:outputStylesheet library="css" name="style.css" />
     </h:head>
     <h:body>
+        <h:graphicImage library="img" name="cover/witcher-3-castle-banner.jpg"
+                        styleClass="banner-img"/>
         <!-- search button -->
         <h3>Type name of card:</h3>
         <h:form>
@@ -16,40 +18,44 @@
                          required="true"
                          requiredMessage="Please enter card name"/>
             <h:commandButton value="Search" action="#{processSearch.runQuery()}">
-                <f:ajax execute="search" render="@form" />
+                <!-- send input text box component to server for processing,
+                     refresh output text, table and card image components
+                -->
+                <f:ajax execute="search" render="search output cardDetailsTable card-img" />
             </h:commandButton>
             <h4>
-            <h:outputText id="output"
-                          value="#{processSearch.searchKey != null ? processSearch.output : ''}" />
+                <h:outputText id="output"
+                              value="#{processSearch.searchKey != null ? processSearch.output : ''}" />
             </h4>
-
-            <!-- card details table -->
-            <h:dataTable id="cardDetailsTable" value="#{processSearch.gwentCardList}" var="gc"
-                         styleClass="gwentCard-table"
-                         headerClass="gwentCard-table-header"
-                         rowClasses="gwentCard-table-odd-row, gwentCard-table-even-row">
-                <h:column>
-                    <!-- column header -->
-                    <f:facet name="header">Card Name</f:facet>
-                    <!-- row record -->
-                    #{gc.name}
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Unit Strength</f:facet>
-                    #{gc.unitStrength}
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Ability</f:facet>
-                    #{gc.ability}
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Type</f:facet>
-                    #{gc.type}
-                </h:column>
-            </h:dataTable><br/>
-
-            <!-- card image -->
-            <h:graphicImage library="img" name="#{processSearch.cardImgPath}" />
+            <div>
+                <!-- card details table -->
+                <h:dataTable id="cardDetailsTable" value="#{processSearch.gwentCardList}" var="gc"
+                             styleClass="gwentCard-table"
+                             headerClass="gwentCard-table-header"
+                             rowClasses="gwentCard-table-odd-row, gwentCard-table-even-row">
+                    <h:column>
+                        <!-- column header -->
+                        <f:facet name="header">Card Name</f:facet>
+                        <!-- row record -->
+                        #{gc.name}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Unit Strength</f:facet>
+                            #{gc.unitStrength}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Ability</f:facet>
+                            #{gc.ability}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Type</f:facet>
+                            #{gc.type}
+                    </h:column>
+                </h:dataTable>
+            </div>
         </h:form>
+        <!-- card image -->
+        <h:graphicImage id="card-img" library="img" name="#{processSearch.cardImgPath}"
+                        styleClass="card-img"/>
     </h:body>
 </html>
