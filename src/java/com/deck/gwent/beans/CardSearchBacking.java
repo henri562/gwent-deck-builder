@@ -21,9 +21,9 @@ import javax.faces.bean.ViewScoped;
  *
  * @author Mengchuan Lin
  */
-@ManagedBean (name = "processSearch")
+@ManagedBean
 @ViewScoped
-public class processSearch implements Serializable {
+public class CardSearchBacking implements Serializable {
 
     private String searchKey;
     private String result;
@@ -50,7 +50,7 @@ public class processSearch implements Serializable {
     /**
      * Creates a new instance of processSearch
      */
-    public processSearch() {
+    public CardSearchBacking() {
         initDB();
     }
 

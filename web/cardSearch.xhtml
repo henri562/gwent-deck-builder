@@ -14,21 +14,21 @@
         <h3>Type name of card:</h3>
         <h:form>
             <h:message for="search" infoClass="info" errorClass="error" />
-            <h:inputText id="search" value="#{processSearch.searchKey}"
+            <h:inputText id="search" value="#{cardSearchBacking.searchKey}"
                          required="true"
                          requiredMessage="Please enter card name"/>
-            <h:commandButton value="Search" action="#{processSearch.runQuery()}">
+            <h:commandButton value="Search" action="#{cardSearchBacking.runQuery()}">
                 <!-- send input text box component to server for processing,
                      refresh output text, table and card image components
                 -->
                 <f:ajax execute="search" render="search output cardDetailsTable card-img" />
             </h:commandButton>
             <h4>
-                <h:outputText id="output" value="#{processSearch.output}" />
+                <h:outputText id="output" value="#{cardSearchBacking.output}" />
             </h4>
             <div>
                 <!-- card details table -->
-                <h:dataTable id="cardDetailsTable" value="#{processSearch.gwentCardList}" var="gc"
+                <h:dataTable id="cardDetailsTable" value="#{cardSearchBacking.gwentCardList}" var="gc"
                              styleClass="gwentCard-table"
                              headerClass="gwentCard-table-header"
                              rowClasses="gwentCard-table-odd-row, gwentCard-table-even-row">
@@ -54,7 +54,7 @@
             </div>
         </h:form><br />
         <!-- card image -->
-        <h:graphicImage id="card-img" library="img" name="#{processSearch.cardImgPath}"
+        <h:graphicImage id="card-img" library="img" name="#{cardSearchBacking.cardImgPath}"
                         styleClass="card-img"/>
     </h:body>
 </html>

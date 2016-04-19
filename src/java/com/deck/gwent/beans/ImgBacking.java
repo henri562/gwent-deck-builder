@@ -13,17 +13,17 @@ import javax.faces.bean.RequestScoped;
  *
  * @author Mengchuan Lin
  */
-@ManagedBean (name = "bgImgRandomizer")
+@ManagedBean
 @RequestScoped
-public class bgImgRandomizer {
+public class ImgBacking {
 
     private final String FOLDER = "cover/";
     private String imgPath = FOLDER;
     private final int UPPERBOUND = 2, LOWERBOUND = 1;
     /**
-     * Creates a new instance of bgImgRandomizer
+     * Creates a new instance of ImgBacking
      */
-    public bgImgRandomizer() {
+    public ImgBacking() {
         randomizeImg();
     }
 
