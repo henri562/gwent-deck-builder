@@ -20,21 +20,21 @@ INSERT INTO basic_gwent VALUES
 INSERT INTO basic_gwent VALUES
         ( 'Emhyr var Emreis, Emperor of Nilfgaard'
         , '-'
-        , 'Lets you see 3 random cards from opponent’s hand'
+        , 'Lets you see 3 random cards from opponent''s hand'
         , 'Leader'
         );
 
 INSERT INTO basic_gwent VALUES
         ( 'Emhyr var Emreis, The Relentless'
         , '-'
-        , 'Pick a card from opponent’s discard pile'
+        , 'Pick a card from opponent''s discard pile'
         , 'Leader'
         );
 
 INSERT INTO basic_gwent VALUES
         ( 'Emhyr var Emreis, The White Flame'
         , '-'
-        , 'Cancel opponent’s leader ability'
+        , 'Cancel opponent''s leader ability'
         , 'Leader'
         );
 
