@@ -15,14 +15,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ViewScoped;
 
 /**
  *
  * @author Mengchuan Lin
  */
-@ManagedBean (name = "processSearch", eager = false)
-@SessionScoped
+@ManagedBean (name = "processSearch")
+@ViewScoped
 public class processSearch implements Serializable {
 
     private String searchKey;
@@ -39,8 +39,8 @@ public class processSearch implements Serializable {
     private final List<GwentCard> gwentCardList = new ArrayList<>(Arrays.asList(
              new GwentCard(cardName, cardUnitStrength, cardAbility, cardType)));
 
-    /* These Java SQL objects are by default non-serializable and therefore made
-    transient to prevent Apache Tomcat from de-serializing them when restoring
+    /* These Java SQL objects are by default non-serializable attributes and
+    therefore made transient to prevent Apache Tomcat from serializing them in
     HTTP sessions */
     private transient Connection conn;
     private transient PreparedStatement pstmt;
