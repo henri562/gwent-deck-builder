@@ -46,6 +46,8 @@ public class CardSearchBacking implements Serializable {
     private transient PreparedStatement pstmt;
     private transient ResultSet rset;
     private static int count = 0;
+    private String queryItem;
+    private boolean isFound;
 
     /**
      * Creates a new instance of processSearch
@@ -78,11 +80,13 @@ public class CardSearchBacking implements Serializable {
      * Processes user search and update image path
      */
     public void runQuery() {
+        searchKey = searchKey.trim();
+        queryItem = searchKey;
         if (fetchData()) {
             result = searchKey.substring(0, 1).toUpperCase()
                      + searchKey.substring(1);
             cardImgPath = FOLDER
-                          + searchKey.trim().toLowerCase().replace(' ', '-')
+                          + searchKey.toLowerCase().replace(' ', '-')
                           + JPG;
         }
         else {
@@ -92,7 +96,8 @@ public class CardSearchBacking implements Serializable {
             cardImgPath = "error/not-found" + JPG;
         }
         searchKey = null; //clear input value in JSF form
-        System.out.println("query #" + ++count + " run");
+        System.out.println("---Query [" + ++count + "]---. Item: " + queryItem
+                            + "\tFound: " + isFound);
     }
 
     /**
@@ -115,12 +120,12 @@ public class CardSearchBacking implements Serializable {
                     gwentCardList.add(new GwentCard(cardName, cardUnitStrength,
                                                     cardAbility, cardType));
                 }
-                return true;
+                return isFound = true;
             }
         } catch (SQLException ex) {
             System.err.println(ex);
         }
-        return false;
+        return isFound = false;
     }
 
     /**

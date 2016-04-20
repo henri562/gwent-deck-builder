@@ -17,7 +17,7 @@ CREATE TABLE basic_gwent
     CONSTRAINT chk_unit_str_limit
           CHECK(LENGTH(unitStrength) <= 2)
   , ability      VARCHAR2(100)
-  , cardType     VARCHAR2(6)
+  , cardType     VARCHAR2(7)
   , CONSTRAINT card_name_pk
               PRIMARY KEY(cardName)
   );
