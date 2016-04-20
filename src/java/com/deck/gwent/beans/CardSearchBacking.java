@@ -96,7 +96,7 @@ public class CardSearchBacking implements Serializable {
             cardImgPath = "error/not-found" + JPG;
         }
         searchKey = null; //clear input value in JSF form
-        System.out.println("---Query [" + ++count + "]---. Item: " + queryItem
+        System.out.println("---Query [" + ++count + "]--- Item: " + queryItem
                             + "\tFound: " + isFound);
     }
 
