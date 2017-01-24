@@ -134,8 +134,8 @@ public class CardSearchBacking implements Serializable {
      */
     private void initDB() {
         try {
-            conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE",
-                                               "linm", "rommel");
+            conn = DriverManager.getConnection("jdbc:oracle:thin:@npu9.npu.edu:1521:npu9ora",
+                                               "CS547_12861", "changeme");
             System.out.println("Connected to database. Schema: " + conn.getSchema());
             //make preparedStatement
             pstmt = conn.prepareStatement("SELECT * from basic_gwent"
