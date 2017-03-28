@@ -17,14 +17,30 @@
                                styleClass="menu-link"/>
             </h:form>
             <h:graphicImage library="img" name="cover/witcher-3-geralt-banner.jpg"
-                        styleClass="banner-img"/>
+                        styleClass="collection-banner-img"/>
         </div>
         <div id="mid">
             <h:form>
-                <h:commandLink id= "whiteOrchard" action="whiteOrchard?faces-redirect=false"
-                               styleClass="pic-link">
-                    <h:graphicImage library="img" name="location/witcher-3-white-orchard.jpg"  />
+                <h:commandLink id= "vizima" action="vizima?faces-redirect=false">
+                    <h:graphicImage library="img" name="location/witcher-3-vizima.jpg"
+                                    styleClass="location-img"/>
                 </h:commandLink>
+                <h:commandLink id= "whiteOrchard" action="whiteOrchard?faces-redirect=false">
+                    <h:graphicImage library="img" name="location/witcher-3-white-orchard.jpg"
+                                    styleClass="location-img"/>
+                </h:commandLink>
+                <h:commandLink id= "velen" action="velen?faces-redirect=false">
+                    <h:graphicImage library="img" name="location/witcher-3-velen.jpg"
+                                    styleClass="location-img"/>
+                </h:commandLink>
+                <h:commandLink id= "novigrad" action="novigrad?faces-redirect=false">
+                    <h:graphicImage library="img" name="location/witcher-3-novigrad.jpg"
+                                    styleClass="location-img"/>
+                </h:commandLink>
+                <h:commandLink id= "skellige" action="skellige?faces-redirect=false">
+                    <h:graphicImage library="img" name="location/witcher-3-skellige.jpg"
+                                    styleClass="location-img"/>
+                </h:commandLink>                
             </h:form>
         </div>
     </h:body>

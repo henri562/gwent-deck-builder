@@ -57,16 +57,23 @@ h4 {
     margin-right: 10px;
 }
 
-.pic-link {
-    margin-right: 20px;
-}
-
 .cmd-button-welcome {
     font-family: Century Gothic;
     font-size: large;
     font-weight: bold;
     color: black;
     margin: 10px;
+}
+/* image style */
+.collection-banner-img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+.location-img {
+    margin-right: 20px;
+    margin-bottom: 30px;
 }
 
 .cover-img, .banner-img, .card-img {
