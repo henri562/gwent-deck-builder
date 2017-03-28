@@ -51,6 +51,24 @@ h4 {
     color: #DAA520; /* dark gold */
 }
 
+.menu-link {
+    font-family: Candara;
+    color: #DAA520; /* dark gold */
+    margin-right: 10px;
+}
+
+.pic-link {
+    margin-right: 20px;
+}
+
+.cmd-button-welcome {
+    font-family: Century Gothic;
+    font-size: large;
+    font-weight: bold;
+    color: black;
+    margin: 10px;
+}
+
 .cover-img, .banner-img, .card-img {
     display: block;
     margin: 0 auto;
