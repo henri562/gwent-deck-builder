@@ -11,10 +11,14 @@
         <h:graphicImage library="img"
                         name="#{imgBacking.imgPath}"
                         styleClass="cover-img" />
-        <div class="wrapper">
+        <div class="wrapper"><br />
             <h:form>
-            <h:commandButton value="Build Deck"
-                             action="cardSearch?faces-redirect=false"/>
+            <h:commandButton value="Search Deck"
+                             action="cardSearch?faces-redirect=false"
+                             styleClass="cmd-button-welcome"/>
+            <h:commandButton value="Browse Deck"
+                             action="collection?faces-redirect=false"
+                             styleClass="cmd-button-welcome"/>
             </h:form>
         </div>
     </h:body>

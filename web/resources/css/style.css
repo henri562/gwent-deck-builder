@@ -51,6 +51,38 @@ h4 {
     color: #DAA520; /* dark gold */
 }
 
+.menu-link {
+    font-family: Candara;
+    font-weight: bold;
+    font-size: x-large;
+    color: #DAA520; /* dark gold */
+    margin-right: 10px;
+}
+
+.cmd-button-welcome {
+    font-family: Century Gothic;
+    font-size: large;
+    font-weight: bold;
+    color: black;
+    margin: 10px;
+}
+/* image style */
+.collection-banner-img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+div.location .location-img {
+    display: block;
+    margin: 0 auto;
+    
+}
+
+div.location h3 {
+    text-align: center;
+}
+
 .cover-img, .banner-img, .card-img {
     display: block;
     margin: 0 auto;

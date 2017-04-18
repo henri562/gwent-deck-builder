@@ -8,6 +8,16 @@
         <h:outputStylesheet library="css" name="style.css" />
     </h:head>
     <h:body>
+        <div id="top">
+            <h:form>
+                <h:commandLink id="home" value="Home"
+                               action ="welcome?faces-redirect=false"
+                               styleClass="menu-link"/>
+                <h:commandLink id="browse" value="Browse"
+                               action ="collection?faces-redirect=false"
+                               styleClass="menu-link"/>
+            </h:form>
+        </div>
         <h:graphicImage library="img" name="cover/witcher-3-castle-banner.jpg"
                         styleClass="banner-img"/>
         <!-- search button -->
