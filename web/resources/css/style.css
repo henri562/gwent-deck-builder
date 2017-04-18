@@ -53,6 +53,8 @@ h4 {
 
 .menu-link {
     font-family: Candara;
+    font-weight: bold;
+    font-size: x-large;
     color: #DAA520; /* dark gold */
     margin-right: 10px;
 }
