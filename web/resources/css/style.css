@@ -71,9 +71,14 @@ h4 {
     margin-bottom: 100px;
 }
 
-.location-img {
-    margin-right: 20px;
-    margin-bottom: 30px;
+div.location .location-img {
+    display: block;
+    margin: 0 auto;
+    
+}
+
+div.location h3 {
+    text-align: center;
 }
 
 .cover-img, .banner-img, .card-img {
